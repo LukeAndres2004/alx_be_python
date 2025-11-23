@@ -1,9 +1,11 @@
-farenheit_to_celsius=5/9
-celcius_to_farenheit=9/5
+FAHRENHEIT_TO_CELSIUS_FACTOR = 5/9
+CELSIUS_TO_FAHRENHEIT_FACTOR = 9/5
+
+
 def convert_to_celsius(farenheit):
-    return (farenheit - 32) * farenheit_to_celsius
+    return (farenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
 def convert_to_farenheit(celcius):
-    return (celcius * celcius_to_farenheit) + 32    
+    return (celcius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32    
 def main():
     print("Temperature Converter")
     choice = input("Convert to (C)elsius or (F)arenheit? ").strip().upper()
@@ -19,3 +21,4 @@ def main():
         print("Invalid choice. Please select 'C' or 'F'.")  
 if __name__ == "__main__":
     main()
+
