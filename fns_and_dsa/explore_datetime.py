@@ -27,7 +27,7 @@ def main():
     # Part 2
     while True:
         try:
-            days = int(input("Enter the number of days to add to today: "))
+            days = int(input("Enter the number of days to add to the current date: "))
             if days < 0:
                 print("Please enter a positive number or zero.")
                 continue
@@ -40,4 +40,5 @@ def main():
 # Run the program
 if __name__ == "__main__":
     main()
+
 
