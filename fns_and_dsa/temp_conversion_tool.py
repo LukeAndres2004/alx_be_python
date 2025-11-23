@@ -16,19 +16,20 @@ def get_valid_temperature(prompt):
             print("Error: Please enter a valid number (e.g. 98.6, -10, 212)")
 def main():
     print("Temperature Converter")
-    choice = input("Convert to (C)elsius or (F)arenheit? ").strip().upper()
+    choice = input("Is this temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()
     if choice == 'C':
-        farenheit = get_valid_temperature("Enter temperature in Farenheit: ")
+        farenheit = get_valid_temperature("Enter the temperature to convert: ")
         celsius = convert_to_celsius(farenheit)
         print(f"{farenheit}°F is {celsius:.2f}°C")
     elif choice == 'F':
-        celsius = get_valid_temperature("Enter temperature in Celsius: ")
+        celsius = get_valid_temperature("Enter the temperature to convert: ")
         farenheit = convert_to_farenheit(celsius)
         print(f"{celsius}°C is {farenheit:.2f}°F")
     else:
         raise ValueError ("Invalid choice. Please select 'C' or 'F'.")  
 if __name__ == "__main__":
     main()
+
 
 
 
