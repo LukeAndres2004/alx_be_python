@@ -18,7 +18,8 @@ def main():
         farenheit = convert_to_farenheit(celsius)
         print(f"{celsius}°C is {farenheit:.2f}°F")
     else:
-        print("Invalid choice. Please select 'C' or 'F'.")  
+        raise ValueError ("Invalid choice. Please select 'C' or 'F'.")  
 if __name__ == "__main__":
     main()
+
 
