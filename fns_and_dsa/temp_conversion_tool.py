@@ -6,20 +6,29 @@ def convert_to_celsius(farenheit):
     return (farenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
 def convert_to_farenheit(celcius):
     return (celcius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32    
+def get_valid_temperature(prompt):
+    """Keep asking until user enters a valid number"""
+    while True:
+        try:
+            value = float(input(prompt))
+            return value
+        except ValueError:
+            print("Error: Please enter a valid number (e.g. 98.6, -10, 212)")
 def main():
     print("Temperature Converter")
     choice = input("Convert to (C)elsius or (F)arenheit? ").strip().upper()
     if choice == 'C':
-        farenheit = float(input("Enter temperature in Farenheit: "))
+        farenheit = get_valid_temperature("Enter temperature in Farenheit: ")
         celsius = convert_to_celsius(farenheit)
         print(f"{farenheit}°F is {celsius:.2f}°C")
     elif choice == 'F':
-        celsius = float(input("Enter temperature in Celsius: "))
+        celsius = get_valid_temperature("Enter temperature in Celsius: ")
         farenheit = convert_to_farenheit(celsius)
         print(f"{celsius}°C is {farenheit:.2f}°F")
     else:
         raise ValueError ("Invalid choice. Please select 'C' or 'F'.")  
 if __name__ == "__main__":
     main()
+
 
 
